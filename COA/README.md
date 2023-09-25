@@ -2,6 +2,8 @@
 
 This project implements a minimal CPU architecture for controlling a washing machine. The system efficiently manages washing machine operations such as washing, rinsing, and spinning while providing user-friendly controls.
 
+### Working Link: https://washingmachinesimulator.onrender.com/
+
 ## Table of Contents
 
 - [Features](#features)
