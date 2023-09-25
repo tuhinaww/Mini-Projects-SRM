@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Washing Machine Simulator</title>
+</head>
+<body>
+    <div class="background">
+        <div class="washing-machine">
+            <div class="inner-container">
+                <div class="display">
+                    <p id="status">Idle</p>
+                </div>
+                <div class="controls">
+                    <h2>Controls</h2>
+                    <div class="control-group">
+                        <label for="cycle">Cycle:</label>
+                        <select id="cycle">
+                            <option value="normal">Normal</option>
+                            <option value="delicate">Delicate</option>
+                            <option value="quick">Quick Wash</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="temperature">Temperature (°C):</label>
+                        <input type="number" id="temperature" value="30">
+                    </div>
+                    <div class="control-group">
+                        <label for="spin-speed">Spin Speed (RPM):</label>
+                        <input type="number" id="spin-speed" value="800">
+                    </div>
+                    <div class="control-group">
+                        <label for="water-level">Water Level:</label>
+                        <input type="range" id="water-level" min="1" max="3" value="2">
+                    </div>
+                    <div class="button-container">
+                        <button id="start">Start</button>
+                        <button id="stop">Stop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
