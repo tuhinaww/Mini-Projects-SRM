@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Crawler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function toggleLinks(elementId) {
+            var x = document.getElementById('links-' + elementId);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function toggleImages(elementId) {
+            var x = document.getElementById('images-' + elementId);
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Web Crawler</h1>
+    </header>
+    <main>
+        <section class="container">
+            <form method="POST">
+                <label for="urls">Enter URLs to Crawl (One per line):</label>
+                <textarea name="urls" id="urls" rows="5" placeholder="https://example.com\nhttps://anotherwebsite.com"></textarea>
+                <button type="submit">Crawl</button>
+            </form>
+            <div class="results">
+                <h2>Results:</h2>
+                <ul>
+                    {% for result in results %}
+                    <li>
+                        <strong>URL:</strong> {{ result['URL'] }}<br>
+                        <strong>Title:</strong> {{ result['Title'] }}<br>
+                        <strong>Meta Description:</strong> {{ result['Meta Description'] }}<br>
+                        <strong>Number of Images:</strong> {{ result['Images']|length }} 
+                        <a href="javascript:void(0);" onclick="toggleImages('{{ loop.index }}')">Show Images</a>
+                        <ul id="images-{{ loop.index }}" style="display: none;">
+                            {% for image in result['Images'] %}
+                            <li>
+                                <img src="{{ image }}" alt="Image" style="max-width: 100%; height: auto; border: 1px solid #ccc; border-radius: 5px;">
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <strong>Number of Links:</strong> {{ result['Links']|length }} 
+                        <a href="javascript:void(0);" onclick="toggleLinks('{{ loop.index }}')">Show Links</a>
+                        <ul id="links-{{ loop.index }}" style="display: none;">
+                            {% for link in result['Links'] %}
+                            <li><a href="{{ link }}" target="_blank">{{ link }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% if result['Error'] %}
+                        <strong>Error:</strong> {{ result['Error'] }}
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
