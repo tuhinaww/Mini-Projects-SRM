@@ -25,7 +25,7 @@ You can customize the behavior and appearance of the web crawler by modifying th
 
 ## Deployment
 
-To deploy this application in a production environment, you can use web server software like Gunicorn or deploy it to a cloud platform like Heroku. Ensure that you follow the deployment best practices for your chosen hosting environment.
+To deploy this application in a production environment, you can use web server software like Gunicorn or deploy it to a cloud platform like Render. Ensure that you follow the deployment best practices for your chosen hosting environment.
 
 ## License
 
