@@ -1,4 +1,4 @@
-# Web Crawler
+# Web Crawler with Multithreading & Multiprocessing
 
 Web Crawler is a Python-based application that allows you to crawl and analyze web pages, extracting information such as page titles, meta descriptions, images, and links.
 
@@ -6,9 +6,18 @@ Web Crawler is a Python-based application that allows you to crawl and analyze w
 
 ## Features
 
-- Crawl multiple websites simultaneously.
+- Crawl multiple websites simultaneously using multithreading.
 - Extract and display page titles, meta descriptions, images, and links.
+- Utilize multiprocessing for efficient data extraction and analysis.
 - Interactive web interface for easy usage.
+
+## Multithreading
+
+Multithreading is used in this web crawler to enable concurrent execution of multiple crawling tasks. Each website to be crawled is assigned to a separate thread, allowing multiple websites to be processed simultaneously. This improves the overall crawling speed and efficiency.
+
+## Multiprocessing
+
+Multiprocessing is employed for efficient data extraction and analysis. While crawling, the application utilizes multiple processes to extract information from web pages in parallel. This further enhances the performance and allows for faster data retrieval.
 
 ## Customization
 
@@ -16,7 +25,7 @@ You can customize the behavior and appearance of the web crawler by modifying th
 
 ## Deployment
 
-To deploy this application in a production environment, you can use web server software like Gunicorn or deploy it to a cloud platform like Render. Ensure that you follow the deployment best practices for your chosen hosting environment.
+To deploy this application in a production environment, you can use web server software like Gunicorn or deploy it to a cloud platform like Heroku. Ensure that you follow the deployment best practices for your chosen hosting environment.
 
 ## License
 
